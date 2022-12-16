@@ -1,16 +1,26 @@
-# This is a sample Python script.
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# while first_name == '':
+#     print("first number cannot be empty")
+#     first_name = input(first_name)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def validate_name(name):
+    while True:
+        if name.strip() == '':
+            print("first name cannot be empty")
+            name = input(name)
+        elif any(not c.isalpha() for c in name):
+            print("first name cannot contain a number")
+            name = input(name)
+        else:
+            name = name.capitalize()
+            break
+    return name
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+first_name = input("Enter first name")
+first_name = str(input(first_name))
+first_name = validate_name(first_name)
+
+
+print(f"First name is {first_name}")
