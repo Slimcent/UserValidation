@@ -90,8 +90,7 @@ def validate_age(user_age):
                 break
 
 
-age = input("Enter age")
-age = validate_age(age)
+age = validate_age("Enter age")
 print(f"Your age is {age}")
 
 
